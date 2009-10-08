@@ -30,6 +30,10 @@
 
 using namespace std;
 
+void output_json(stringstream &ss, const string &description, const string &title);
+void output_single(json::Value &v, const string &description, bool pretty);
+void output_both(json::Value &v, const string &description);
+
 void output_json(stringstream &ss, const string &description, const string &title)
 {
 	string line("==============================");

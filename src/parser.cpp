@@ -32,6 +32,17 @@
 #include "json.h"
 #include "utf8_private.h"
 
+void check_stream(std::istream &s);
+void read_string(std::istream &s, const std::string &str);
+bool try_to_read(std::istream &s, char c_want);
+void read_digits_from_stream(std::istream &s, std::string &str, bool need_one);
+json::Value *read_json_numeric(std::istream &s);
+std::string read_json_string_basic(std::istream &s);
+void eat_whitespace(std::istream &s);
+json::Value *read_json_object_or_array(std::istream &s);
+json::Value *read_json_value(std::istream &s);
+void parse_item(std::istream &s, std::stack<json::Value *> &struct_stack);
+
 /* Throw an exception if the passed stream is in an errored state.
  */
 void check_stream(std::istream &s)

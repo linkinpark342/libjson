@@ -31,6 +31,8 @@
 
 using namespace std;
 
+void print_object(json::Object &o);
+
 void print_object(json::Object &o)
 {
 	json::Object::const_iterator i;
