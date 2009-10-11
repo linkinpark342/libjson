@@ -9,6 +9,7 @@ set(PACKAGE_DESCRIPTION "C++ JSON Library")
 set(CPACK_PACKAGE_CONTACT ${AUTHOR})
 set(CPACK_PACKAGE_VERSION ${VERSION})
 set(CPACK_PACKAGE_DESCRIPTION ${PACKAGE_DESCRIPTION})
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY ${PACKAGE_DESCRIPTION})
 include(CPack)
 
 
@@ -22,6 +23,10 @@ configure_file(${CMAKE_SOURCE_DIR}/libjson.pc.cmake
 	@ONLY)
 install(FILES ${CMAKE_BINARY_DIR}/libjson.pc
 	DESTINATION lib/pkgconfig)
+
+configure_file(${CMAKE_SOURCE_DIR}/libjson-9999.ebuild
+	${CMAKE_BINARY_DIR}/libjson-9999.ebuild
+	@ONLY)
 
 add_subdirectory(doc)
 add_subdirectory(example)
